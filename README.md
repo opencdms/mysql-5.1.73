@@ -13,20 +13,20 @@ Docker image for MySQL 5.1.73 database based on official [MySQL](https://hub.doc
 Start a **mysql** server instance:
     
     # general form
-    $ $ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+    $ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
     
     # example
-    $ docker run -d --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=[my-secret-pw] opencdms/mysql:5.1.73
+    $ docker run -d --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw opencdms/mysql:5.1.73
 
-... where `some-mysql` is the name you want to assign to your container and `[my-secret-pw]` is the password to be set for the MySQL root user. If port 3306 is used then replace `-p 3306:3306` with `-p 3307:3306`
+... where `some-mysql` is the name you want to assign to your container and `my-secret-pw` is the password to be set for the MySQL root user. If port 3306 is used then replace `-p 3306:3306` with `-p 3307:3306`
     
 Other **commands**:
 
-    ## kill the container
-    docker kill [container-id]
+    # kill the container
+    $ docker kill [container-id]
     
     # shell script/shell access
-    $ docker exec -it opencdms/mysql:5.1.73 bash
+    $ docker exec -it some-mysql bash
     
     # viewing MySQL logs
     $ docker logs opencdms/mysql:5.1.73
